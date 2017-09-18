@@ -15,6 +15,8 @@
 		5411A28C1F6F6A65002A171A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5411A28A1F6F6A65002A171A /* LaunchScreen.storyboard */; };
 		5411A2971F6F6A65002A171A /* ios_swift_demoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5411A2961F6F6A65002A171A /* ios_swift_demoTests.swift */; };
 		5411A2A21F6F6A65002A171A /* ios_swift_demoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5411A2A11F6F6A65002A171A /* ios_swift_demoUITests.swift */; };
+		54ED2AFB1F6F895100468FE7 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ED2AFA1F6F895100468FE7 /* Notifications.swift */; };
+		54ED2AFD1F6F924300468FE7 /* Notifications2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ED2AFC1F6F924300468FE7 /* Notifications2.swift */; };
 		56CC8B072A7F60AFBC051215 /* Pods_ios_swift_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B393F3D73836F16E2274FF8B /* Pods_ios_swift_demo.framework */; };
 		A52ABDA88F1C12FA3EA51BBF /* Pods_ios_swift_demoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121622E22D710FA56DF20D94 /* Pods_ios_swift_demoUITests.framework */; };
 /* End PBXBuildFile section */
@@ -54,6 +56,8 @@
 		5411A29D1F6F6A65002A171A /* ios-swift-demoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-swift-demoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5411A2A11F6F6A65002A171A /* ios_swift_demoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_swift_demoUITests.swift; sourceTree = "<group>"; };
 		5411A2A31F6F6A65002A171A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54ED2AFA1F6F895100468FE7 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		54ED2AFC1F6F924300468FE7 /* Notifications2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications2.swift; sourceTree = "<group>"; };
 		710118C46847922BB364D95E /* Pods-ios-swift-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-swift-demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-swift-demo/Pods-ios-swift-demo.release.xcconfig"; sourceTree = "<group>"; };
 		93051BD8126FCFAB96E74E62 /* Pods-ios-swift-demoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-swift-demoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-swift-demoUITests/Pods-ios-swift-demoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B393F3D73836F16E2274FF8B /* Pods_ios_swift_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_swift_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +134,8 @@
 				5411A2881F6F6A65002A171A /* Assets.xcassets */,
 				5411A28A1F6F6A65002A171A /* LaunchScreen.storyboard */,
 				5411A28D1F6F6A65002A171A /* Info.plist */,
+				54ED2AFA1F6F895100468FE7 /* Notifications.swift */,
+				54ED2AFC1F6F924300468FE7 /* Notifications2.swift */,
 			);
 			path = "ios-swift-demo";
 			sourceTree = "<group>";
@@ -176,9 +182,10 @@
 				5411A27A1F6F6A65002A171A /* Sources */,
 				5411A27B1F6F6A65002A171A /* Frameworks */,
 				5411A27C1F6F6A65002A171A /* Resources */,
-				5411A2AF1F6F6EB5002A171A /* ShellScript */,
+				5411A2AF1F6F6EB5002A171A /* Find Warnings / Todo */,
 				C92F5EFC422EE3201E36D652 /* [CP] Embed Pods Frameworks */,
 				C84F162F9757018FA59DC552 /* [CP] Copy Pods Resources */,
+				5483DA991F6F74CC00B84A89 /* SwiftFormat */,
 			);
 			buildRules = (
 			);
@@ -392,18 +399,33 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios-swift-demoTests/Pods-ios-swift-demoTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5411A2AF1F6F6EB5002A171A /* ShellScript */ = {
+		5411A2AF1F6F6EB5002A171A /* Find Warnings / Todo */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Find Warnings / Todo";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\nTAGS=\"TODO:|FIXME:\"\necho \"searching ${SRCROOT} for ${TAGS}\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"\nfi";
+		};
+		5483DA991F6F74CC00B84A89 /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"${SRCROOT}/\" --enable blankLinesAtEndOfScope,blankLinesBetweenScopes,braces,consecutiveBlankLines,consecutiveSpaces,hoistPatternLet,indent,linebreakAtEndOfFile,linebreaks,numberFormatting,ranges,redundantBackticks,redundantGet,redundantLet,redundantNilInit,redundantParens,redundantPattern,redundantRawValues,redundantReturn,redundantSelf,redundantVoidReturnType,redundantInit,semicolons,spaceAroundBraces,spaceAroundBrackets,spaceAroundComments,spaceAroundGenerics,spaceAroundOperators,spaceAroundParens,spaceInsideBraces,spaceInsideBrackets,spaceInsideComments,spaceInsideGenerics,spaceInsideParens,specifiers,trailingClosures,trailingCommas,trailingSpace,todos,unusedArguments,void,wrapArguments --disable elseOnSameLine,fileHeader --allman true --binarygrouping 4,8 --commas always --comments indent --decimalgrouping 3,6 --empty void --experimental disabled --exponentcase uppercase --hexgrouping 4,8 --hexliteralcase uppercase --ifdef indent --indent 4 --insertlines enabled --linebreaks lf --octalgrouping 4,8 --patternlet hoist --ranges spaced --removelines enabled --semicolons inline --self remove --stripunusedargs always --trimwhitespace always --wraparguments afterfirst --wrapelements beforefirst";
 		};
 		83BC4C3437775C1CAE4406BA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -441,9 +463,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ios-swift-demo/Pods-ios-swift-demo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/TraceLog/TraceLog.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TraceLog.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -472,8 +497,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54ED2AFB1F6F895100468FE7 /* Notifications.swift in Sources */,
 				5411A2841F6F6A65002A171A /* ViewController.swift in Sources */,
 				5411A2821F6F6A65002A171A /* AppDelegate.swift in Sources */,
+				54ED2AFD1F6F924300468FE7 /* Notifications2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

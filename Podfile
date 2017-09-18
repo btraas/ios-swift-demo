@@ -6,6 +6,9 @@ target 'ios-swift-demo' do
   use_frameworks!
 
   # Pods for ios-swift-demo
+  pod 'SwiftFormat/CLI'
+  pod "TraceLog"
+
 
   target 'ios-swift-demoTests' do
     inherit! :search_paths
