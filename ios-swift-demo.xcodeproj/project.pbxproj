@@ -423,6 +423,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "as.tra.brayden.ios-swift-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -436,6 +437,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "as.tra.brayden.ios-swift-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -516,6 +518,7 @@
 				5411A2A81F6F6A65002A171A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5411A2A91F6F6A65002A171A /* Build configuration list for PBXNativeTarget "ios-swift-demoTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +527,7 @@
 				5411A2AB1F6F6A65002A171A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5411A2AC1F6F6A65002A171A /* Build configuration list for PBXNativeTarget "ios-swift-demoUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +536,7 @@
 				5411A2AE1F6F6A65002A171A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
