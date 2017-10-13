@@ -255,7 +255,7 @@
 				TargetAttributes = {
 					5411A27D1F6F6A65002A171A = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = XLXWXYEM49;
+						DevelopmentTeam = N6RP3H788Z;
 						ProvisioningStyle = Automatic;
 					};
 					5411A2911F6F6A65002A171A = {
@@ -667,10 +667,10 @@
 			baseConfigurationReference = CD3306B4FF5517792061A9E9 /* Pods-ios-swift-demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XLXWXYEM49;
+				DEVELOPMENT_TEAM = N6RP3H788Z;
 				INFOPLIST_FILE = "ios-swift-demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "as.tra.brayden.ios-swift-demo";
+				PRODUCT_BUNDLE_IDENTIFIER = "as.tra.brayden.ios-swift-demo-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -682,10 +682,10 @@
 			baseConfigurationReference = 710118C46847922BB364D95E /* Pods-ios-swift-demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XLXWXYEM49;
+				DEVELOPMENT_TEAM = N6RP3H788Z;
 				INFOPLIST_FILE = "ios-swift-demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "as.tra.brayden.ios-swift-demo";
+				PRODUCT_BUNDLE_IDENTIFIER = "as.tra.brayden.ios-swift-demo-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
