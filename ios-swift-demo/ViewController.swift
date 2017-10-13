@@ -9,9 +9,17 @@
 import UIKit
 import UserNotifications
 import TraceLog
+import Firebase
 
 class ViewController: UIViewController
 {
+    @IBAction func dateChanged(_ sender: UIDatePicker)
+    {
+        setDays.text = String(Int(round(Float(sender.date.timeIntervalSinceNow.description)! / 60 / 60 / 24)))
+    }
+
+    @IBOutlet var setDays: UITextView!
+
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -19,8 +27,25 @@ class ViewController: UIViewController
 
         logTrace { "enter viewDidLoad" }
 
-        let center = UNUserNotificationCenter.current()
+        // lab 1
 
+        title = "Main"
+
+        logTrace { "exit viewDidLoad" }
+    }
+
+    @IBAction func sendClick(_: UIButton)
+    {
+        showNotification()
+    }
+
+    @IBOutlet var titleField2: UITextField!
+
+    @IBOutlet var message: UITextField!
+
+    func showNotification()
+    {
+        let center = UNUserNotificationCenter.current()
         let options: UNAuthorizationOptions = [.alert, .sound]
 
         center.requestAuthorization(options: options)
@@ -33,11 +58,11 @@ class ViewController: UIViewController
             else
             {
                 let content = UNMutableNotificationContent()
-                content.title = "Don't forget"
-                content.body = "Buy some milk"
+                content.title = self.titleField2.text!
+                content.body = self.message.text!
                 content.sound = UNNotificationSound.default()
 
-                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5,
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1,
                                                                 repeats: false)
 
                 content.categoryIdentifier = "UYLReminderCategory"
@@ -54,10 +79,39 @@ class ViewController: UIViewController
                         print("fail error: " + error.localizedDescription)
                     }
                 }
+
+                // Chapter 8: Notification center
+
+                // Note: The last parameter ("using:" callback) in addObserver is passed in as a block of code, see below
+                //
+                let messageName = "DarcyTest"
+
+                let observer = Notifications.addObserver(messageName: messageName, object: nil)
+                { _ in
+                    logTrace { "Received the notification" }
+                }
+
+                // Post the Notification (callback should run)
+                Notifications.post(messageName: messageName, object: nil, userInfo: nil)
+
+                // Remove the observer
+                Notifications.removeObserver(observer: observer)
+
+                // Test posting after removing the observer (callback should not run)
+                Notifications.post(messageName: messageName, object: nil, userInfo: nil)
             }
         }
+    }
 
-        logTrace { "exit viewDidLoad" }
+    override func viewDidAppear(_: Bool)
+    {
+        Analytics.logEvent(AnalyticsEventSelectContent,
+                           parameters:
+                               [
+                                   AnalyticsParameterItemID: "id-\(title!)" as NSObject,
+                                   AnalyticsParameterItemName: title! as NSObject,
+                                   AnalyticsParameterContentType: "cont" as NSObject,
+        ])
     }
 
     override func didReceiveMemoryWarning()

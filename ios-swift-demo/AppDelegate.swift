@@ -11,6 +11,7 @@ import UserNotifications
 import UserNotificationsUI
 import NotificationCenter
 import TraceLog
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate
@@ -23,11 +24,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     {
         // Override point for customization after application launch.
 
-        TraceLog.configure(environment: ["LOG_ALL": "TRACE1"])
+        TraceLog.configure(environment: ["LOG_ALL": "TRACE4"])
         logTrace { "enter application didFinishLaunchingWithOptions" }
 
         let center = UNUserNotificationCenter.current()
         center.delegate = notificationDelegate
+
+        FirebaseApp.configure()
 
         logTrace { "exit application didFinishLaunchingWithOptions" }
 

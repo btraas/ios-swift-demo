@@ -1,17 +1,45 @@
 PODS:
+  - Firebase/Core (4.1.1):
+    - FirebaseAnalytics (= 4.0.3)
+    - FirebaseCore (= 4.0.6)
+  - FirebaseAnalytics (4.0.3):
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - nanopb (~> 0.3)
+  - FirebaseCore (4.0.6):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - nanopb (~> 0.3)
+  - FirebaseInstanceID (2.0.2):
+    - FirebaseCore (~> 4.0)
+  - GoogleToolboxForMac/Defines (2.1.1)
+  - GoogleToolboxForMac/NSData+zlib (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
   - SwiftFormat/CLI (0.29.5)
   - TraceLog (2.0.2):
     - TraceLog/Swift (= 2.0.2)
   - TraceLog/Swift (2.0.2)
 
 DEPENDENCIES:
+  - Firebase/Core
   - SwiftFormat/CLI
   - TraceLog
 
 SPEC CHECKSUMS:
+  Firebase: 052c0de688fc87b414996eea13e223dd9fee3fa2
+  FirebaseAnalytics: 76f754d37ca5b04f36856729b6af3ca0152d1069
+  FirebaseCore: 28def3c643989c97ea5a69ea5000f5fa9902b9fd
+  FirebaseInstanceID: c4c7fca62c7b7330caee5da04f19a37ea37bb1c1
+  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SwiftFormat: 9aadf994b01d08400d3d1b0112116d50e468ebd7
   TraceLog: d853ab3e97f8cabaf0bbe3d0f53da81a51744d2d
 
-PODFILE CHECKSUM: ff5ed72eac1977315e22fd07dc35ee2d4afeeed8
+PODFILE CHECKSUM: 3c5b2b10395e12e8622c8a5391f9be942d7df1af
 
 COCOAPODS: 1.3.1

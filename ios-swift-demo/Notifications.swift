@@ -33,24 +33,25 @@ class Notifications
         logTrace { "exit post \(messageName!)" }
     }
 
-    static func addObserver(message: String!,
+    static func addObserver(messageName: String!,
                             object: Any?,
                             using receiver: @escaping (Notification) -> Void) -> NSObjectProtocol
     {
-        logTrace { "enter addObserver \(message!)" }
+        logTrace { "enter addObserver \(messageName!)" }
 
-        let id = notificationCentre.addObserver(forName: NSNotification.Name(message),
+        let id = notificationCentre.addObserver(forName: NSNotification.Name(messageName),
                                                 object: object,
                                                 queue: nil,
                                                 using: receiver)
 
-        logTrace { "exit addObserver \(message!)" }
+        logTrace { "exit addObserver \(messageName!)" }
 
         return id
     }
 
     static func removeObserver(observer: AnyObject?)
     {
+
         logTrace { "enter removeObserver" }
 
         if observer != nil

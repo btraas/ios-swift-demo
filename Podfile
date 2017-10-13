@@ -8,6 +8,7 @@ target 'ios-swift-demo' do
   # Pods for ios-swift-demo
   pod 'SwiftFormat/CLI'
   pod "TraceLog"
+  pod 'Firebase/Core'
 
 
   target 'ios-swift-demoTests' do

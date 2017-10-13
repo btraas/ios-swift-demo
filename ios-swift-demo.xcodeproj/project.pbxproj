@@ -15,6 +15,9 @@
 		5411A28C1F6F6A65002A171A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5411A28A1F6F6A65002A171A /* LaunchScreen.storyboard */; };
 		5411A2971F6F6A65002A171A /* ios_swift_demoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5411A2961F6F6A65002A171A /* ios_swift_demoTests.swift */; };
 		5411A2A21F6F6A65002A171A /* ios_swift_demoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5411A2A11F6F6A65002A171A /* ios_swift_demoUITests.swift */; };
+		54D907E61F6FA1A100BDDF6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54D907E51F6FA1A100BDDF6C /* GoogleService-Info.plist */; };
+		54D907E71F6FA1A100BDDF6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54D907E51F6FA1A100BDDF6C /* GoogleService-Info.plist */; };
+		54D907E81F6FA1A100BDDF6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54D907E51F6FA1A100BDDF6C /* GoogleService-Info.plist */; };
 		54ED2AFB1F6F895100468FE7 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ED2AFA1F6F895100468FE7 /* Notifications.swift */; };
 		54ED2AFD1F6F924300468FE7 /* Notifications2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ED2AFC1F6F924300468FE7 /* Notifications2.swift */; };
 		56CC8B072A7F60AFBC051215 /* Pods_ios_swift_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B393F3D73836F16E2274FF8B /* Pods_ios_swift_demo.framework */; };
@@ -56,6 +59,7 @@
 		5411A29D1F6F6A65002A171A /* ios-swift-demoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-swift-demoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5411A2A11F6F6A65002A171A /* ios_swift_demoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_swift_demoUITests.swift; sourceTree = "<group>"; };
 		5411A2A31F6F6A65002A171A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54D907E51F6FA1A100BDDF6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		54ED2AFA1F6F895100468FE7 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		54ED2AFC1F6F924300468FE7 /* Notifications2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications2.swift; sourceTree = "<group>"; };
 		710118C46847922BB364D95E /* Pods-ios-swift-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-swift-demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-swift-demo/Pods-ios-swift-demo.release.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 				5411A28D1F6F6A65002A171A /* Info.plist */,
 				54ED2AFA1F6F895100468FE7 /* Notifications.swift */,
 				54ED2AFC1F6F924300468FE7 /* Notifications2.swift */,
+				54D907E51F6FA1A100BDDF6C /* GoogleService-Info.plist */,
 			);
 			path = "ios-swift-demo";
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5411A28C1F6F6A65002A171A /* LaunchScreen.storyboard in Resources */,
+				54D907E61F6FA1A100BDDF6C /* GoogleService-Info.plist in Resources */,
 				5411A2891F6F6A65002A171A /* Assets.xcassets in Resources */,
 				5411A2871F6F6A65002A171A /* Main.storyboard in Resources */,
 			);
@@ -302,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54D907E71F6FA1A100BDDF6C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54D907E81F6FA1A100BDDF6C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,11 +472,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ios-swift-demo/Pods-ios-swift-demo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/TraceLog/TraceLog.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TraceLog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
